@@ -1,0 +1,6 @@
+[submodule "examples/matlab/liblsl-Matlab"]
+	path = examples/matlab/liblsl-Matlab
+	url = https://github.com/labstreaminglayer/liblsl-Matlab.git
+[submodule "examples/cpp/liblsl"]
+	path = examples/cpp/liblsl
+	url = https://github.com/sccn/liblsl.git
