@@ -5,7 +5,7 @@ The  following quick-guide provides a brief description how openVibe work with E
 ## Prerequisites
 1. Login via EmotivApp and connect a headset on EmotivPro.
 
-## How to send data from EmotivPro to OpenVibe
+## How Openvibe receive data from Emotiv LSL Outlet stream.
 Please follow below guide step by step:
 
 1. Go to Lab streaming layer setting on EmotivPro, choose data stream and data format (cf_float32 because OpenVibe only support this format).
@@ -20,7 +20,7 @@ The EmotivDataStream-EEG stream is for EEG, the EmotivDataStream-Motion stream i
 <p align="center">
   <img width="400" height="265" src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/openvibe-startreceivingdata-emotivOutlet_400x265.jpg">
 </p>
-4. Open the OpenViBE designer and connect an "Acquisition client" block to a "Signal display" to see if both signals from EmotivPro match those in OpenVibe.
+4. Open the OpenViBE designer, then open [LSLViewer.mxs](./LSLViewer.mxs) file. The program connect an "Acquisition client" block to a "Signal display" to see if both signals from EmotivPro match those in OpenVibe.
 Click "Acquisition client" to change setting, make sure the acquisition server port match with connection port at Acquisition server.
 <p align="center">
   <img width="400" height="350" src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/openvibe-designer-emotivOutlet_400x350.jpg">
@@ -31,10 +31,13 @@ Click "Acquisition client" to change setting, make sure the acquisition server p
 </p>
 
 
-## How to send marker from Openvibe to EmotivPro
+## How to send marker from Openvibe to EmotivPro Inlet
 
+TODO
 
-
+## Reference
+1. [OpenViBE and LabStreamingLayer](http://openvibe.inria.fr/how-to-use-labstreaminglayer-in-openvibe/)
+2. [OpenViBELSL ConnectionQuick-Guide](https://bitalino.com/docs/quick_guide_OpenVIBE.pdf)
 
 
 

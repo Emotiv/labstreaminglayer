@@ -63,17 +63,33 @@ function vis_stream(varargin)
 %                                uses portions of vis_dataStreamViewer
 %                                (c) 2012 by Tim Mullen
 
+% add library path to search path
+mfilepath=fileparts(which(mfilename));
+%disp(mfilepath);
+% todo: check the below lines code called many times
+if ismac
+    % Code to run on Mac platform
+    addpath(fullfile(mfilepath,'./bin/mac'));
+elseif isunix
+    % Code to run on Linux platform
+    addpath(fullfile(mfilepath,'./bin/linux'));
+elseif ispc
+    % Code to run on Windows platform
+    addpath(fullfile(mfilepath,'./bin/win64'));
+else
+    disp('Platform not supported');
+end
 
 % make sure that dependencies are on the path and that LSL is loaded
 if ~exist('arg_define','file')
-    addpath(genpath(fileparts(mfilename('fullpath')))); end
+    addpath(genpath(fileparts(mfilename('fullpath'))));
+end
 try
     lib = lsl_loadlib(env_translatepath('dependencies:/liblsl-Matlab/bin'));
 catch
     lib = lsl_loadlib();
 end
-addpath('F:\Emotiv_Project\Source_code\LSLProject\labstreaminglayer\LSL\liblsl-Matlab');
-addpath('F:\Emotiv_Project\Source_code\LSLProject\labstreaminglayer\LSL\liblsl-Matlab\bin');
+
 % handle input arguments
 streamnames = find_streams(lib);
 opts = arg_define(varargin, ...
@@ -116,12 +132,12 @@ end
 
     % update display with new data
     function on_timer(varargin)
-        disp('update display with new data');
+        %disp('update display with new data');
         try 
             % pull a new chunk from LSL
             [chunk,timestamps] = inlet.pull_chunk();
             if isempty(chunk)
-                disp('isempty(chunk)');
+                %disp('isempty(chunk)');
                 return; 
             end
             
@@ -270,6 +286,7 @@ end
 function channels = derive_channel_labels(info)
     channels = {};
     ch = info.desc().child('channels').child('channel');
+    disp('Data channels:');
     while ~ch.empty()
         name = ch.child_value_n('label');
         disp(name);
@@ -277,10 +294,10 @@ function channels = derive_channel_labels(info)
             channels{end+1} = name; end %#ok<AGROW>
         ch = ch.next_sibling_n('channel');
     end
-    disp('info_channel')
-    disp(info.channel_count())
-    disp('length(channels)')
-    disp(length(channels))
+    %disp('info_channel')
+    %disp(info.channel_count())
+    %disp('length(channels)')
+    %disp(length(channels))
     if length(channels) ~= info.channel_count()
         disp('The number of channels in the steam does not match the number of labeled channel records. Using numbered labels.');
         channels = cellfun(@(k)['Ch' num2str(k)],num2cell(1:info.channel_count(),1),'UniformOutput',false);
