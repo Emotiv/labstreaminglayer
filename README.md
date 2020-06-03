@@ -14,11 +14,11 @@ After headset connected, go to LSL settings menu on EmotivPro. There are 2 tabs 
   <img width="600" height="592" src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/outlet-configuration_600x592.jpg">
 </p>
 
-**The Stream name:** Show the name of lsl stream. But the actual stream name will be added a suffix such as: "- EEG" for eeg data stream, " - Motion" for motion stream...
+**The Stream name:** Show the name of lsl stream. The detected actual stream name at Inlet will be EmotivDataStream-EEG, EmotivDataStream-Motion, EmotivDataStream-Performance Metrics depend on type of data stream.
 
 **Data stream:** There are 3 types of data streams: EEG, Motion, Performance metrics. Each choosen one will be created a lsl stream.
 
-**Data format:** Currently, We only support 2 types: cf_float32 and cf_double64. Notes that, Openvibe only support cf_float32 and cf_int32.
+**Data format:** Currently, We support 2 types: cf_float32 and cf_double64.
 
 **Transmit type:** We support both type sample and chunk. A chunk contains number of samples.
 
@@ -28,16 +28,19 @@ After headset connected, go to LSL settings menu on EmotivPro. There are 2 tabs 
   <img width="500" height="358" src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/inlet-configuration_500x358.jpg">
 </p>
 
-We only support marker adding to Emotiv data stream. The marker event can have one channel or 3 channels for timing synchornization as below:
-```
-// MarkerValue is value of marker
-std::vector<std::string> channels = {"MarkerValue"};
+We support send marker to Emotiv Inlet with 2 options:
 
-or for timing synchornization
-// MarkerTime is the time you want to add a marker. It is an epoch time.
-// MarkerValue is value of marker
-// CurrentTime is current time at epoch time
-std::vector<std::string> channels = { "MarkerTime","MarkerValue", "CurrentTime"};
+```
+option 1: a simple marker. The marker event have one element. Currently, We support double type for
+// MarkerValue is value of marker. Currently, It is double type but EmotivPro will extract integer part before add to data stream.
+channels = {"MarkerValue"};
+
+option 2: marker with time for timing synchronization. The marker event is a three element vector
+// MarkerTime is the time you want to add a marker. It is an epoch time at double type.
+// MarkerValue is value of marker. Currently, It is double type but EmotivPro will extract integer part before add to data stream.
+// CurrentTime is current epoch time (double type) when marker pushed to LSL. The CurrentTime may a bit different MarkerTime sometime.
+{ "MarkerTime","MarkerValue", "CurrentTime"};
+
 ```
 After send marker to LSL, You can see the stream name in Inlet tab. Choose one then click to connect button. Afterthat, you can see the marker added to data stream as below
 <p align="center">
@@ -58,6 +61,7 @@ There are guidelines and examples work with Cortex data streams:
 
 ## Reference
 1. [labstreaminglayer github ](https://github.com/sccn/labstreaminglayer)
+2. [labstreaminglayer doc](https://labstreaminglayer.readthedocs.io/)
 
 ## Release Notes
 
