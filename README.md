@@ -13,9 +13,13 @@ After headset connected, go to LSL settings menu on EmotivPro. There are 2 tabs 
 <p align="center">
   <img width="600" height="592" src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/outlet-configuration_600x592.jpg">
 </p>
+
 **The Stream name:** Show the name of lsl stream. But the actual stream name will be added a suffix such as: "- EEG" for eeg data stream, " - Motion" for motion stream...
+
 **Data stream:** There are 3 types of data streams: EEG, Motion, Performance metrics. Each choosen one will be created a lsl stream.
+
 **Data format:** Currently, We only support 2 types: cf_float32 and cf_double64. Notes that, Openvibe only support cf_float32 and cf_int32.
+
 **Transmit type:** We support both type sample and chunk. A chunk contains number of samples.
 
 2. **Inlet:** To support add marker from a outside LSL Outlet to Emotiv data streams.
