@@ -2,11 +2,10 @@
 #include <chrono>         // std::chrono::seconds
 #include <lsl_cpp.h>
 #include <iostream>
-#include <chrono>
 
 /**
  * This is an example of how a simple data stream can be offered on the network.
- * Here, the stream is named SimpleStream, has content-type EEG, and 8 channels.
+ * Here, the stream is named MarkerWithTimeStamp, has content-type Marker, and 3 channels.
  * The transmitted samples contain random numbers (and the sampling rate is irregular)
  */
 
@@ -22,7 +21,10 @@ int main(int argc, char* argv[]) {
 		info.desc().append_child_value("manufacturer", "LSL");
 		lsl::xml_element chns = info.desc().append_child("channels");
 
-		std::vector<std::string> channels = { "MarkerTimeStamp","MarkerValue", "CurrentTime"};
+		// MarkerTime is the time you want to add a marker. It is an epoch time.
+		// MarkerValue is value of marker
+		// CurrentTime is current time at epoch time
+		std::vector<std::string> channels = { "MarkerTime","MarkerValue", "CurrentTime"};
 		for (int c = 0; c < 3; c++) {
 			chns.append_child("channel").append_child_value("label", channels.at(c).c_str()).append_child_value("type", "Marker");
 		}
@@ -45,7 +47,7 @@ int main(int argc, char* argv[]) {
 			// send it
 			std::cout << "now sending: " << markerValue << std::endl;
 			outlet.push_sample(sample);
-			std::this_thread::sleep_for(std::chrono::milliseconds(1500));
+			std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 		}
 		std::cout << "Have no consumers" << std::endl;
 	}

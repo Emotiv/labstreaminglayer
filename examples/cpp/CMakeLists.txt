@@ -51,4 +51,5 @@ endfunction()
 
 addlslexample(SendSimpleMarker cpp)
 addlslexample(SendMarker cpp)
+addlslexample(ReceiveData cpp)
 
