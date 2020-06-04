@@ -31,7 +31,7 @@ int main(int argc, char* argv[]) {
 		// make a new outlet
 		lsl::stream_outlet outlet(info);
 
-		while (!outlet.wait_for_consumers(120));
+		while (!outlet.wait_for_consumers(180));
 
 		double sample[nchannels];
 		int count = 0;
