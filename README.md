@@ -1,48 +1,49 @@
 # Emotiv Lab Streaming Layer Interface
 
-Here are guidelines and some examples to an application work with Emotiv LSL.
+Here are guidelines and some examples to use LSL with EMOTIV Brainwear&reg;.
 
 ## Prerequisites
 
-1. [Download and install](https://www.emotiv.com/developer/) the EmotivApp and EmotivPro. The EmotivApp is for login process while EmotivPro for configuring LSL both Inlet and Outlet.
+* [Download and install](https://www.emotiv.com/developer/) the EMOTIV App and EmotivPRO.
+* Get a EmotivPRO license from https://www.emotiv.com/emotivpro/
 
-## How to configure LSL on EmotivPro
+## How to configure LSL in EmotivPRO
 
-After headset connected, go to LSL settings menu on EmotivPro. There are 2 tabs Outlet and Inlet.
-1. **Outlet:** Configure for data streams (EEG, Motions, Performance metrics) as LSL Outlet.
+After connecting your EMOTIV Brainwear&reg; headset, go to LSL settings menu in EmotivPRO. There are separate tabs for LSL Outlet and Inlet functionality.
+### Outlet
+Configure for data streams (EEG, Motions, Performance metrics) as LSL Outlet.
 <p align="center">
   <img width="600" height="592" src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/outlet-configuration_600x592.jpg">
 </p>
 
-**The Stream name:** Show the name of lsl stream. The detected actual stream name at Inlet will be EmotivDataStream-EEG, EmotivDataStream-Motion, EmotivDataStream-Performance Metrics depend on type of data stream.
+* **Stream name:** Show the name of LSL stream. The actual stream name on the other side (Inlet) will be *EmotivDataStream-EEG*, *EmotivDataStream-Motion* or *EmotivDataStream-Performance Metrics*, depending on the type of data stream.
 
-**Data stream:** There are 3 types of data streams: EEG, Motion, Performance metrics. Each choosen one will be created a lsl stream.
+* **Data stream:** There are 3 types of data streams: EEG, Motion, Performance Metrics. Each one will create an individual LSL stream.
 
-**Data format:** Currently, We support 2 types: cf_float32 and cf_double64.
+* **Data format:** Currently, 2 types are supported: *cf_float32* or *cf_double64*.
 
-**Transmit type:** We support both type sample and chunk. A chunk contains number of samples.
+* **Transmit type:** We support both *Sample* and *Chunk*. A chunk contains certain number of samples, depending on the *Chunk size*.
 
-2. **Inlet:** To support add marker from a outside LSL Outlet to Emotiv data streams.
+### Inlet
+To support sending data from a LSL Outlet to Emotiv data streams. 
 
 <p align="center">
   <img width="500" height="358" src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/inlet-configuration_500x358.jpg">
 </p>
 
-We support send marker to Emotiv Inlet with 2 options:
+Currently we support sending markers to the Inlet with 2 options:
 
-```
-option 1: a simple marker. The marker event have one element. Currently, We support double type for
-// MarkerValue is value of marker. Currently, It is double type but EmotivPro will extract integer part before add to data stream.
-channels = {"MarkerValue"};
+1. A simple marker value - Double / integer type is expected but EmotivPRO will extract only the integer part before adding into data stream.
+  * Expected format of data: `{"MarkerValue"}`
 
-option 2: marker with time for timing synchronization. The marker event is a three element vector
-// MarkerTime is the time you want to add a marker. It is an epoch time at double type.
-// MarkerValue is value of marker. Currently, It is double type but EmotivPro will extract integer part before add to data stream.
-// CurrentTime is current epoch time (double type) when marker pushed to LSL. The CurrentTime may a bit different MarkerTime sometime.
-{ "MarkerTime","MarkerValue", "CurrentTime"};
+2. Marker with time for timing synchronization - The marker event is a vector with 3 elements:
+  * `MarkerTime` is the epoch time of the event in double type.
+  * `MarkerValue` is value of marker. Double / integer type is expected but EmotivPRO will extract only the integer part before adding into data stream.
+  * `CurrentTime` is current epoch time (double type) when the marker is being pushed to the Inlet. It is usually later than the `MarkerTime`.
+  * Expected format of data: `{"MarkerTime", "MarkerValue", "CurrentTime"}`
 
-```
-After send marker to LSL, You can see the stream name in Inlet tab. Choose one then click to connect button. Afterthat, you can see the marker added to data stream as below
+
+After sending marker via LSL, You can see the stream name in the Inlet page. Choose one then click the Connect button. After that, you will see the marker being added to the data stream as below:
 <p align="center">
   <img width="400" height="258" src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/matlab-markerResult-Inlet_400x258.jpg">
 </p>
@@ -50,18 +51,18 @@ After send marker to LSL, You can see the stream name in Inlet tab. Choose one t
 
 ## How to use
 
-There are guidelines and examples work with Cortex data streams:
+There are some guidelines and examples on 3rd party applications:
 
-1.Guidelines for <a href="examples/matlab/readme.md">matlab</a>.
+1. Guidelines for <a href="examples/matlab/readme.md">MATLAB</a>.
 
-2.Guidelines for <a href="examples/openvibe/readme.md">openvibe</a>.
+2. Guidelines for <a href="examples/openvibe/readme.md">OpenViBE</a>.
 
-3.Guidelines for <a href="examples/cpp/readme.md">cpp</a> project.
+3. Guidelines for <a href="examples/cpp/readme.md">C++</a> project.
 
 
 ## Reference
-1. [labstreaminglayer github ](https://github.com/sccn/labstreaminglayer)
-2. [labstreaminglayer doc](https://labstreaminglayer.readthedocs.io/)
+1. [LSL on Github](https://github.com/sccn/labstreaminglayer)
+2. [LSL Documentation](https://labstreaminglayer.readthedocs.io/)
 
 ## Release Notes
 
