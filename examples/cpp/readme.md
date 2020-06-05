@@ -48,7 +48,7 @@ The last field is maximum number of sample will be printed out to console.
 
 3. The result will be shown as below:
 <p align="center">
-  <img width="500" height="407" src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/cpp-result-eegOutlet-500x407.jpg">
+  <img width="758" height="816" src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/cpp-receivedata-result.png">
 </p>
 
 ## How to send marker from a Cpp Example to Emotiv LSL Inlet
@@ -56,12 +56,9 @@ The last field is maximum number of sample will be printed out to console.
 Emotiv LSL Inlet support add both simple marker and marker with time (for timing synchronization between machine).
 1. Build and Run SendMarker or SendSimpleMarker.
 2. Go to Labs streaming layer setting-Inlet on EmotivPro, choose a outlet stream in stream name (MarkerWithTimeStamp or SimpleMarker). And click Connect button.
-<p align="center">
-  <img width="400" height="286" src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/cpp-config-Inlet-400x286.jpg">
-</p>
 3. The result will be shown as below 
 <p align="center">
-  <img width="500" height="286" src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/cpp-markerResult-Inlet-500x286.jpg">
+  <img width="1225" height="751" src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/cpp-sendmarker.png">
 </p>
 
 ## Reference
