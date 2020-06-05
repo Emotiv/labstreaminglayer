@@ -19,11 +19,11 @@ Click start button to start LSL Outlet data stream.
 2. Open [vis_stream.m](./vis_stream.m) on Matlab. You might need to add liblsl-Matlab path to your MATLAB path recursively. Use addpath(genpath('path/to/liblsl-Matlab')).
 3. Run vis_stream. In dialog box, change sampleling rate for display to sample rate of corresponding data as below:
 <p align="center">
-  <img width="400" height="307" src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/matlab-configure-eegOutlet_400x307.jpg">
+  <img width="1042" height="749" src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/matlab-vistream-config.png">
 </p>
 4. The data stream will display as below:
 <p align="center">
-  <img width="400" height="362" src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/matlab-display-eegOutlet_400x362.jpg">
+  <img width="573" height="521" src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/matlab-vistream-result.png">
 </p>
 
 
@@ -34,11 +34,11 @@ The MarkerTime is time of marker. The MarkerValue is value of marker. The Curren
 2. Run sendmarker.
 3. Go to Lab streaming layer setting Inlet on EmotivPro, choose MatlabMarker in stream name. And click Connect button.
 <p align="center">
-  <img width="400" height="362" src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/matlab-marker-Inlet_400x317.jpg">
+  <img width="1041" height="747" src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/matlab-inlet-config.png">
 </p>
 4. Markers will be added to data stream as below:
 <p align="center">
-  <img width="400" height="258" src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/matlab-markerResult-Inlet_400x258.jpg">
+  <img width="1042" height="741" src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/marker-added.png">
 </p>
 
 ## Reference
