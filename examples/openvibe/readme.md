@@ -38,7 +38,7 @@ Hit **Apply** to save and close the dialog.
 
 ## How to send marker from OpenViBE to EMOTIV LSL Inlet
 
-TODO
+> Coming soon...
 
 ## Reference
 
