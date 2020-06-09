@@ -1,46 +1,52 @@
-# Guideline for Matlab work with Emotiv LSL Interface
+# Guideline for MATLAB to work with EMOTIV LSL Interface
 
-The  following quick-guide provides a brief description how Matlab work with Emotiv LSL Interface.
+The following guide describes how MATLAB works with EMOTIV LSL Interface.
 
 ## Prerequisites
-* Login via EmotivApp and connect a headset on EmotivPro.
-* Get the latest version of submodule [liblsl-Matlab](https://github.com/labstreaminglayer/liblsl-Matlab.git) 
-```
-       git submodule update --init
-```
-* Recommend use Matlab version 2017a or later.
+* [Download and install](https://www.emotiv.com/developer/) the EMOTIV App and EmotivPRO.
+* Get a EmotivPRO license from https://www.emotiv.com/emotivpro/
+* Install MATLAB (recommend version 2017a or later)
+* Get the latest version of MATLAB LSL library from https://github.com/labstreaminglayer/liblsl-Matlab.git
+* Add liblsl-Matlab to your MATLAB path accordingly via `addpath(genpath('path/to/liblsl-Matlab'))`.
 
+## How to receive data from EMOTIV LSL Outlet stream in MATLAB
 
-## How Matlab receive data from Emotiv LSL Outlet stream.
-Please follow below guide step by step:
+1. Go to **Lab Streaming Layer** page, **Outlet** tab in EmotivPRO, choose the desire **Data stream** type and **Data format**.
+Click the **Start** button to start streaming.
 
-1. Go to Lab streaming layer setting - Outlet on EmotivPro, choose data stream type and data format.
-Click start button to start LSL Outlet data stream.
-2. Open [vis_stream.m](./vis_stream.m) on Matlab. You might need to add liblsl-Matlab path to your MATLAB path recursively. Use addpath(genpath('path/to/liblsl-Matlab')).
-3. Run vis_stream. In dialog box, change sampleling rate for display to sample rate of corresponding data as below:
+2. Open [vis_stream.m](./vis_stream.m) in MATLAB.
+
+3. Run vis_stream.m. In the pop-up dialog, change the sampling rate for display to match the rate of data from the Outlet:
 <p align="center">
-  <img width="1042" height="749" src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/matlab-vistream-config.png">
-</p>
-4. The data stream will display as below:
-<p align="center">
-  <img width="573" height="521" src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/matlab-vistream-result.png">
+  <img src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/matlab-vistream-config.png">
 </p>
 
-
-## How to send marker from Matlab to Emotiv LSL Inlet
-1. Open [sendmarker.m](./sendmarker.m) on Matlab. You might need to add liblsl-Matlab path to your MATLAB path recursively. Use addpath(genpath('path/to/liblsl-Matlab')).
-The program will create a marker event each second. The marker event is vector contain MarkerTime, MarkerValue and CurrentTime. The MarkerTime and CurrentTime are epoch time at double format.
-The MarkerTime is time of marker. The MarkerValue is value of marker. The CurrentTime is current epoch time. We need both time for time synchornization between machines.
-2. Run sendmarker.
-3. Go to Lab streaming layer setting Inlet on EmotivPro, choose MatlabMarker in stream name. And click Connect button.
+4. Hit **Ok**. The data stream will be displayed like this:
 <p align="center">
-  <img width="1041" height="747" src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/matlab-inlet-config.png">
+  <img src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/matlab-vistream-result.png">
 </p>
-4. Markers will be added to data stream as below:
+
+
+## How to send marker from MATLAB to EMOTIV LSL Inlet
+
+1. Open [sendmarker.m](./sendmarker.m) in MATLAB. The program will create a marker event every second.
+  * The marker event is a vector containing `MarkerTime`, `MarkerValue` and `CurrentTime`.
+  * The `MarkerTime` and `CurrentTime` are epoch time in double format - we need both for the time synchornization between machines.
+  * The `MarkerTime` is time of marker event. The `MarkerValue` is value of marker. `The CurrentTime` is current epoch time of processing. 
+
+2. Run sendmarker.m.
+
+3. Go to **Lab Streaming Layer** page, **Inlet** tab on EmotivPRO, choose **MatlabMarker** in stream name. Then click the **Connect** button.
 <p align="center">
-  <img width="1042" height="741" src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/marker-added.png">
+  <img src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/matlab-inlet-config.png">
+</p>
+
+4. Markers will be added to data stream as the vertical red lines:
+<p align="center">
+  <img src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/marker-added.png">
 </p>
 
 ## Reference
-1. [Matlab and LabStreamingLayer](https://github.com/labstreaminglayer/liblsl-Matlab/)
+
+* [MATLAB and LabStreamingLayer](https://github.com/labstreaminglayer/liblsl-Matlab/)
 
