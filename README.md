@@ -53,16 +53,17 @@ After sending marker via LSL, You can see the stream name in the Inlet page. Cho
 
 There are some guidelines and examples on 3rd party applications:
 
-1. Guidelines for <a href="examples/matlab/readme.md">MATLAB</a>.
+* Guidelines for <a href="examples/matlab/readme.md">MATLAB</a>.
 
-2. Guidelines for <a href="examples/openvibe/readme.md">OpenViBE</a>.
+* Guidelines for <a href="examples/openvibe/readme.md">OpenViBE</a>.
 
-3. Guidelines for <a href="examples/cpp/readme.md">C++</a> project.
+* Guidelines for <a href="examples/cpp/readme.md">C++</a> project.
 
 
 ## Reference
-1. [LSL on Github](https://github.com/sccn/labstreaminglayer)
-2. [LSL Documentation](https://labstreaminglayer.readthedocs.io/)
+* [LSL on Github](https://github.com/sccn/labstreaminglayer)
+
+* [LSL Documentation](https://labstreaminglayer.readthedocs.io/)
 
 ## Release Notes
 
