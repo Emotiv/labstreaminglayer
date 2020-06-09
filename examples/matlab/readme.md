@@ -3,11 +3,11 @@
 The following guide describes how MATLAB works with EMOTIV LSL Interface.
 
 ## Prerequisites
-* [Download and install](https://www.emotiv.com/developer/) the EMOTIV App and EmotivPRO.
+* [Download and install](https://www.emotiv.com/developer/) the EMOTIV App and EmotivPRO
 * Get a EmotivPRO license from https://www.emotiv.com/emotivpro/
 * Install MATLAB (recommend version 2017a or later)
 * Get the latest version of MATLAB LSL library from https://github.com/labstreaminglayer/liblsl-Matlab.git
-* Add liblsl-Matlab to your MATLAB path accordingly via `addpath(genpath('path/to/liblsl-Matlab'))`.
+* Add liblsl-Matlab to your MATLAB path accordingly via `addpath(genpath('path/to/liblsl-Matlab'))`
 
 ## How to receive data from EMOTIV LSL Outlet stream in MATLAB
 
