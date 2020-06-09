@@ -1,69 +1,78 @@
-# Cpp Examples work with Emotiv LSL Interface
+# Guideline for C++ to work with EMOTIV LSL Interface
 
-The  following quick-guide provides a brief description how a Cpp Examples work with Emotiv LSL Interface.
+The following guide describes how C++ works with EMOTIV LSL Interface.
 
 ## Prerequisites
-* Login via EmotivApp and connect a headset on EmotivPro.
-* Install Cmake version 3.5 or later.
+* [Download and install](https://www.emotiv.com/developer/) the EMOTIV App and EmotivPRO
+* Get a EmotivPRO license from https://www.emotiv.com/emotivpro/
+* Require C++ compiler (gcc, MinGW, etc)
+* Install CMake version 3.5 or later
 
 ## How to build project
-1.Clone the repository
 
+1. Clone this repository
 ```
 git clone https://github.com/Emotiv/labstreaminglayer.git
 ```
     
-2.Go to examples/cpp and create the build directory
+2. Go to `examples/cpp` and create the build directory
 
-3.Configure the project using cmake
-
+3. Configure the project using cmake
 ```
 mkdir build && cd build
+
+# if you prefer to generate a project file for your IDE
+# checkout https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html
 cmake .. -G <generator name>
 ```
-if windows64 bit add a definition -DWIN64=1
 
-If you used a generator, you can now open the IDE project file. Then build the install target.
-Alternatively, you can build directly from command line as below: 
+For Windows 64-bit please add the param `-DWIN64=1`
+
+If you use a generator, you can now open the generated project file with your IDE. Then build the `install` target.
+Alternatively, you can build directly from command line: 
 ```
 cmake --build . --config Release --target install
 ```
 
-## How to receive data from Emotiv LSL Outlet stream.
-Please follow below guide step by step:
+## How to receive data from EMOTIV LSL Outlet stream in C++
 
-1. Go to Labs streaming layer setting-Outlet on EmotivPro, choose data stream type and data format.
-Click start button to start LSL Outlet data stream.
-2. Build and run ReceiveData executable. 
+1. Go to **Lab Streaming Layer** page, **Outlet** tab in EmotivPRO, choose the desire **Data stream** type and **Data format** 
+Click **Start** button to start streaming.
 
-If you run executable from IDE, please enter a field name and the desired value and transmitType (sample or chunk) on console as below:
+2. Build and run `ReceiveData` binary. 
+
+If you run it from IDE, please enter a field name and the desired value and transmitType (sample or chunk) on console as below:
 ```
 type EEG sample
 ```
-If you run the executable directly on terminal or commandline:
+If you run the executable directly on command line:
 ```
 ReceiveData type EEG chunk 50
 ```
-The last field is maximum number of sample will be printed out to console.
+The last parameter is the number of sample to be printed out in console.
 
-3. The result will be shown as below:
+3. If succeeded you can see the result like this:
 <p align="center">
-  <img width="758" height="816" src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/cpp-receivedata-result.png">
+  <img src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/cpp-receivedata-result.png">
 </p>
 
-## How to send marker from a Cpp Example to Emotiv LSL Inlet
+## How to send marker from C++ to EMOTIV LSL Inlet
 
-Emotiv LSL Inlet support add both simple marker and marker with time (for timing synchronization between machine).
-1. Build and Run SendMarker or SendSimpleMarker.
-2. Go to Labs streaming layer setting-Inlet on EmotivPro, choose a outlet stream in stream name (MarkerWithTimeStamp or SimpleMarker). And click Connect button.
-3. The result will be shown as below 
+EMOTIV LSL Inlet supports add both simple marker and marker with desire event time.
+
+1. Build and Run `SendMarker` or `SendSimpleMarker`.
+
+2. Go to **Lab Streaming Layer** page, **Inlet** tab on EmotivPRO, choose **MarkerWithTimeStamp** or **SimpleMarker** in stream name. Then click the **Connect** button.
+
+3. If succeeded you can see the result like this:
 <p align="center">
-  <img width="1225" height="751" src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/cpp-sendmarker.png">
+  <img src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/cpp-sendmarker.png">
 </p>
 
 ## Reference
-1. [Lab streaming layer]https://labstreaminglayer.readthedocs.io/info/getting_started.html
-2. [build liblsl](https://labstreaminglayer.readthedocs.io/dev/lib_dev.html)
+
+* LabStreamingLayer https://labstreaminglayer.readthedocs.io/
+  * Build liblsl https://labstreaminglayer.readthedocs.io/dev/lib_dev.html
 
 
 
