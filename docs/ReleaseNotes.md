@@ -1,12 +1,10 @@
-# <a id="release-notes"></a>Release Notes
+# Release Notes
 
-## (June 8, 2020)
-The Version is supported on the following feature:
-- Send marker from Cpp, Matlab to Emotiv LSL
-- Receive data and display data on Openvibe and Matlab, Cpp.
-- Support Win64 and MacOS
+## 8th June, 2020
+- Send marker from C++ / MATLAB to LSL Inlet
+- Receive and display data in OpenViBE and MATLAB, C++ from LSL Outlet
+- Support Microsoft Windows and macOS
 
-Upcoming examples support will be added:
- - Psychopy
+More upcoming examples:
+ - PsychoPy / Python
  - Unity
- - Python
