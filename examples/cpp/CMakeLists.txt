@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
+set(CMAKE_CXX_FLAGS "-std=c++11 -stdlib=libc++")
 project(Examples
     LANGUAGES C CXX
     VERSION 0.2.0)
@@ -6,8 +7,6 @@ project(Examples
 set(LIB_BIN_DIR ${PROJECT_SOURCE_DIR}/bin)
 set(LIB_DIR ${PROJECT_SOURCE_DIR}/lib)
 set(INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include)
-message ("Current src dir " ${CMAKE_CURRENT_SOURCE_DIR})
-message ("Current binary dir " ${CMAKE_CURRENT_BINARY_DIR})
 
 
 if (WIN32)
@@ -58,6 +57,12 @@ function(addlslexample name extension)
     target_link_libraries(${name} ${PROJECT_LINK_LIBS})
     target_compile_features(${name} PRIVATE cxx_constexpr)
     install(TARGETS ${name} DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/bin)
+    
+    # copy dlls to executable folder
+    add_custom_command(TARGET ${name} POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        ${LSL_DLLS} ${CMAKE_CURRENT_BINARY_DIR}/bin)
+    
 endfunction()
 
 addlslexample(SendSimpleMarker cpp)

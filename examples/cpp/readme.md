@@ -48,12 +48,17 @@ Click **Start** button to start streaming.
 2. Build and run `ReceiveData` binary. 
 
 If you run it from IDE, please enter a field name and the desired value and transmitType (sample or chunk) on console as below:
+
 ```
 type EEG sample
+or
+name EmotivDataStream-EEG sample
 ```
 If you run the executable directly on command line:
 ```
-ReceiveData type EEG chunk 50
+ReceiveData type Motion chunk 50
+or 
+ReceiveData name EmotivDataStream-Motion chunk 50
 ```
 The last parameter is the number of sample to be printed out in console.
 
