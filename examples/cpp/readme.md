@@ -18,15 +18,21 @@ git clone https://github.com/Emotiv/labstreaminglayer.git
 2. Go to `examples/cpp` and create the build directory
 
 3. Configure the project using cmake
+
+For Windows 64-bit please add the param `-DWIN64=1`
 ```
 mkdir build && cd build
 
 # if you prefer to generate a project file for your IDE
 # checkout https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html
 cmake .. -G <generator name>
-```
 
-For Windows 64-bit please add the param `-DWIN64=1`
+For example: 
+ Generates Visual Studio 15 (VS 2017) project files.
+    cmake .. -G "Visual Studio 15 2017" -A x64 -DWIN64=1
+ Generate Xcode project files
+    cmake .. -G Xcode
+```
 
 If you use a generator, you can now open the generated project file with your IDE. Then build the `install` target.
 Alternatively, you can build directly from command line: 

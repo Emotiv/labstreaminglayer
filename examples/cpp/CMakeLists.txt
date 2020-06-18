@@ -6,6 +6,9 @@ project(Examples
 set(LIB_BIN_DIR ${PROJECT_SOURCE_DIR}/bin)
 set(LIB_DIR ${PROJECT_SOURCE_DIR}/lib)
 set(INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include)
+message ("Current src dir " ${CMAKE_CURRENT_SOURCE_DIR})
+message ("Current binary dir " ${CMAKE_CURRENT_BINARY_DIR})
+
 
 if (WIN32)
     
@@ -21,6 +24,13 @@ if (WIN32)
 elseif(APPLE)
     #link_directories( ${LIB_DIR}/mac)
     set ( PROJECT_LINK_LIBS ${LIB_DIR}/mac/liblsl.dylib)
+    # use, i.e. don't skip the full RPATH for the build tree
+    set(CMAKE_SKIP_BUILD_RPATH FALSE)
+
+    # when building, don't use the install RPATH already
+    # (but later on when installing)
+    set(CMAKE_BUILD_WITH_INSTALL_RPATH FALSE)
+    set(CMAKE_INSTALL_RPATH "${LIB_DIR}/mac")
 elseif(UNIX)
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC -fvisibility=hidden -Wall -Wextra")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1y -fPIC -fvisibility=hidden -Wall -Wextra")
@@ -47,7 +57,7 @@ function(addlslexample name extension)
     target_include_directories(${name} PRIVATE  ${INCLUDE_DIR})
     target_link_libraries(${name} ${PROJECT_LINK_LIBS})
     target_compile_features(${name} PRIVATE cxx_constexpr)
-    # installLSLApp(${name})
+    install(TARGETS ${name} DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/bin)
 endfunction()
 
 addlslexample(SendSimpleMarker cpp)
