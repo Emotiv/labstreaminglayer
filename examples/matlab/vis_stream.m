@@ -65,6 +65,7 @@ function vis_stream(varargin)
 
 % add library path to search path
 mfilepath=fileparts(which(mfilename));
+addpath(fullfile(mfilepath,'./liblsl-Matlab'));
 %disp(mfilepath);
 % todo: check the below lines code called many times
 if ismac

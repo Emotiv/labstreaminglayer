@@ -6,8 +6,10 @@ The following guide describes how MATLAB works with EMOTIV LSL Interface.
 * [Download and install](https://www.emotiv.com/developer/) the EMOTIV App and EmotivPRO
 * Get a EmotivPRO license from https://www.emotiv.com/emotivpro/
 * Install MATLAB (recommend version 2017a or later)
-* Get the latest version of MATLAB LSL library from https://github.com/labstreaminglayer/liblsl-Matlab.git
-* Add liblsl-Matlab to your MATLAB path accordingly via `addpath(genpath('path/to/liblsl-Matlab'))`
+* Get MATLAB LSL library from https://github.com/labstreaminglayer/liblsl-Matlab.git. Currently, we are using version at commit "62761b0". You also can get the library via submodule command as below
+```
+    git submodule update --init
+```
 
 ## How to receive data from EMOTIV LSL Outlet stream in MATLAB
 
@@ -26,6 +28,7 @@ Click the **Start** button to start streaming.
   <img src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/matlab-vistream-result.png">
 </p>
 
+**Note**: You also can retrieve data via RecieveData.m example.
 
 ## How to send marker from MATLAB to EMOTIV LSL Inlet
 

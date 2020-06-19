@@ -1,8 +1,11 @@
 % add library path to search path
 mfilepath=fileparts(which(mfilename));
+addpath(fullfile(mfilepath,'./liblsl-Matlab'));
 %disp(mfilepath);
 % todo: check the below lines code called many times
 if ismac
+    disp('mac detect');
+    disp(fullfile(mfilepath,'./bin/mac'));
     % Code to run on Mac platform
     addpath(fullfile(mfilepath,'./bin/mac'));
 elseif isunix
