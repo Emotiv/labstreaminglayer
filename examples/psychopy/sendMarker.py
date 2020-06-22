@@ -1,11 +1,7 @@
-"""Minimal example of how to send event triggers in PsychoPy with
-LabStreamingLayer.
-
+"""Minimal example of how to send event triggers in PsychoPy with LabStreamingLayer.
 In this example, an event marker with marker value is random number [1-99] is sent to LSL with the appearance of each marker.
-
-TO RUN: open in PyschoPy Coder and press 'Run'. Or if you have the psychopy
+TO RUN: open in PyschoPy Coder and hit 'Run'. or if you have the psychopy
 Python package in your environment, run `python sendMarker.py` in command line.
-
 """
 from psychopy import core, visual, event
 from pylsl import StreamInfo, StreamOutlet
@@ -14,7 +10,7 @@ import datetime
 
 
 def main():
-    """Alternate printing 'Hello' and 'World' and send a trigger each time."""
+
     # Set up LabStreamingLayer stream.
     info = StreamInfo(name='PsychoPyMarker', type='Markers', channel_count=3,
                       channel_format='double64', source_id='unique012345')

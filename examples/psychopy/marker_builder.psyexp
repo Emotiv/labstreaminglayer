@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" ?>
+<PsychoPy2experiment encoding="utf-8" version="2020.1.2">
+  <Settings>
+    <Param name="Audio latency priority" updates="None" val="use prefs" valType="str"/>
+    <Param name="Audio lib" updates="None" val="use prefs" valType="str"/>
+    <Param name="Completed URL" updates="None" val="" valType="str"/>
+    <Param name="Data filename" updates="None" val="u'data/%s_%s_%s' % (expInfo['participant'], expName, expInfo['date'])" valType="code"/>
+    <Param name="Enable Escape" updates="None" val="True" valType="bool"/>
+    <Param name="Experiment info" updates="None" val="{'participant': '', 'session': '001'}" valType="code"/>
+    <Param name="Force stereo" updates="None" val="True" valType="bool"/>
+    <Param name="Full-screen window" updates="None" val="False" valType="bool"/>
+    <Param name="HTML path" updates="None" val="html" valType="str"/>
+    <Param name="Incomplete URL" updates="None" val="" valType="str"/>
+    <Param name="Monitor" updates="None" val="testMonitor" valType="str"/>
+    <Param name="Save csv file" updates="None" val="False" valType="bool"/>
+    <Param name="Save excel file" updates="None" val="False" valType="bool"/>
+    <Param name="Save log file" updates="None" val="True" valType="bool"/>
+    <Param name="Save psydat file" updates="None" val="True" valType="bool"/>
+    <Param name="Save wide csv file" updates="None" val="True" valType="bool"/>
+    <Param name="Screen" updates="None" val="1" valType="num"/>
+    <Param name="Show info dlg" updates="None" val="True" valType="bool"/>
+    <Param name="Show mouse" updates="None" val="False" valType="bool"/>
+    <Param name="Units" updates="None" val="height" valType="str"/>
+    <Param name="Use version" updates="None" val="" valType="str"/>
+    <Param name="Window size (pixels)" updates="None" val="[1024, 700]" valType="code"/>
+    <Param name="blendMode" updates="None" val="avg" valType="str"/>
+    <Param name="color" updates="None" val="$[0,0,0]" valType="str"/>
+    <Param name="colorSpace" updates="None" val="rgb" valType="str"/>
+    <Param name="expName" updates="None" val="marker_builder" valType="str"/>
+    <Param name="exportHTML" updates="None" val="on Sync" valType="str"/>
+    <Param name="logging level" updates="None" val="exp" valType="code"/>
+  </Settings>
+  <Routines>
+    <Routine name="markerSender">
+      <CodeComponent name="code">
+        <Param name="Begin Experiment" updates="constant" val="from pylsl import StreamInfo, StreamOutlet&amp;#10;# Set up LabStreamingLayer stream.&amp;#10;info = StreamInfo(name='PsychoPySimpleMarker', type='Markers', channel_count=1,&amp;#10;                  channel_format='double64', source_id='unique012346')&amp;#10;chns = info.desc().append_child(&quot;channels&quot;)&amp;#10;#MarkerValue is value of marker&amp;#10;for label in [&quot;MarkerValue&quot;]:&amp;#10;    ch = chns.append_child(&quot;channel&quot;)&amp;#10;    ch.append_child_value(&quot;label&quot;, label)&amp;#10;    ch.append_child_value(&quot;type&quot;, &quot;Marker&quot;)&amp;#10;info.desc().append_child_value(&quot;manufacturer&quot;, &quot;PsychoPyBuilder&quot;)&amp;#10;                  &amp;#10;# Initialize the stream.&amp;#10;outlet = StreamOutlet(info)" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="import {StreamInfo, StreamOutlet} from 'pylsl';&amp;#10;var ch, chns, info, outlet;&amp;#10;info = new StreamInfo({&quot;name&quot;: &quot;PsychoPySimpleMarker&quot;, &quot;type&quot;: &quot;Markers&quot;, &quot;channel_count&quot;: 1, &quot;channel_format&quot;: &quot;double64&quot;, &quot;source_id&quot;: &quot;unique012346&quot;});&amp;#10;chns = info.desc().append_child(&quot;channels&quot;);&amp;#10;for (var label, _pj_c = 0, _pj_a = [&quot;MarkerValue&quot;], _pj_b = _pj_a.length; (_pj_c &lt; _pj_b); _pj_c += 1) {&amp;#10;    label = _pj_a[_pj_c];&amp;#10;    ch = chns.append_child(&quot;channel&quot;);&amp;#10;    ch.append_child_value(&quot;label&quot;, label);&amp;#10;    ch.append_child_value(&quot;type&quot;, &quot;Marker&quot;);&amp;#10;}&amp;#10;info.desc().append_child_value(&quot;manufacturer&quot;, &quot;PsychoPyBuilder&quot;);&amp;#10;outlet = new StreamOutlet(info);&amp;#10;" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="outlet.push_sample(x=[marker])  # Push event marker." valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="code" valType="code"/>
+      </CodeComponent>
+      <TextComponent name="text">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="text" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="1.0" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="text" updates="set every repeat" val="&quot;Send marker has value: &quot; + str($marker)" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+    </Routine>
+  </Routines>
+  <Flow>
+    <LoopInitiator loopType="TrialHandler" name="markers">
+      <Param name="Selected rows" updates="None" val="" valType="str"/>
+      <Param name="conditions" updates="None" val="[OrderedDict([('marker', 1)]), OrderedDict([('marker', 2)]), OrderedDict([('marker', 23)]), OrderedDict([('marker', 44)]), OrderedDict([('marker', 54)]), OrderedDict([('marker', 43)]), OrderedDict([('marker', 43)]), OrderedDict([('marker', 45)]), OrderedDict([('marker', 34)]), OrderedDict([('marker', 78)]), OrderedDict([('marker', 12)]), OrderedDict([('marker', 32)]), OrderedDict([('marker', 4)]), OrderedDict([('marker', 5)]), OrderedDict([('marker', 56)]), OrderedDict([('marker', 63)]), OrderedDict([('marker', 89)]), OrderedDict([('marker', 44)]), OrderedDict([('marker', 55)]), OrderedDict([('marker', 94)])]" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="marker_data.csv" valType="str"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
+      <Param name="isTrials" updates="None" val="True" valType="bool"/>
+      <Param name="loopType" updates="None" val="random" valType="str"/>
+      <Param name="nReps" updates="None" val="5" valType="code"/>
+      <Param name="name" updates="None" val="markers" valType="code"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+    </LoopInitiator>
+    <Routine name="markerSender"/>
+    <LoopTerminator name="markers"/>
+  </Flow>
+</PsychoPy2experiment>
