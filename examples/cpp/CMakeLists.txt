@@ -59,9 +59,11 @@ function(addlslexample name extension)
     install(TARGETS ${name} DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/bin)
     
     # copy dlls to executable folder
-    add_custom_command(TARGET ${name} POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy_if_different
-        ${LSL_DLLS} ${CMAKE_CURRENT_BINARY_DIR}/bin)
+    if (WIN32)
+        add_custom_command(TARGET ${name} POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+            ${LSL_DLLS} ${CMAKE_CURRENT_BINARY_DIR}/bin)
+     endif()
     
 endfunction()
 
