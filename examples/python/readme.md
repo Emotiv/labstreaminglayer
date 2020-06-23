@@ -17,7 +17,7 @@ The following guide describes how Psychopy send marker to EMOTIV LSL Interface.
 
 2. Open Emotiv Pro app then connect to 'PyMarker' stream on EmotivPro Inlet setting as below:
 <p align="center">
-  <img src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/py_example_inlet_config.png">
+  <img src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/py_example_inlet_config.PNG">
 </p>
 
 The example will create a LSL Outlet stream have 3 channels. Each event is array containing MarkerTime, MarkerValue, CurrentTime. The markertime of marker will be loaded from sending_marker.csv randomly.
