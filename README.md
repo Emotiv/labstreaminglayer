@@ -11,12 +11,12 @@ Here are guidelines and some examples to use LSL with EMOTIV Brainwear&reg;.
 
 After connecting your EMOTIV Brainwear&reg; headset, go to LSL settings menu in EmotivPRO. There are separate tabs for LSL Outlet and Inlet functionality.
 ### Outlet
-Configure for data streams (EEG, Motions, Performance metrics) as LSL Outlet.
+Configure for data streams (EEG, Motions, Performance Metrics) as LSL Outlet.
 <p align="center">
   <img src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/config-outlet.png">
 </p>
 
-* **Stream name:** Show the name of LSL stream. The actual stream name on the other side (Inlet) will be *EmotivDataStream-EEG*, *EmotivDataStream-Motion* or *EmotivDataStream-Performance Metrics*, depending on the type of data stream.
+* **Stream name:** Show the name of LSL stream. The actual stream name on the other side (Inlet) will be *EmotivDataStream-EEG*, *EmotivDataStream-Motion* or *EmotivDataStream-Performance-Metrics*, depending on the type of data stream.
 
 * **Data stream:** There are 3 types of data streams: EEG, Motion, Performance Metrics. Each one will create an individual LSL stream.
 
