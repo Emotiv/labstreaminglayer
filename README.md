@@ -1,2 +1,2 @@
 # labstreaminglayer
-Lab Stream Layer support with EMOTIV Brainwear
+Lab Stream Layer (LSL) support with EMOTIV Brainwear
