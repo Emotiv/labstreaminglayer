@@ -36,6 +36,9 @@ Hit **Apply** to save and close the dialog.
 </p>
 
 
+**Notes:** Currently, OpenViBE only supports cf_float32 and cf_int32. So the data will be casted to cf_float32. Almost data still is same after casting but "Timestamp. Because the Timestamp is large number, lost precision after casting.
+
+
 ## How to send marker from OpenViBE to EMOTIV LSL Inlet
 
 > Coming soon...

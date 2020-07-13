@@ -56,13 +56,13 @@ function(addlslexample name extension)
     target_include_directories(${name} PRIVATE  ${INCLUDE_DIR})
     target_link_libraries(${name} ${PROJECT_LINK_LIBS})
     target_compile_features(${name} PRIVATE cxx_constexpr)
-    install(TARGETS ${name} DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/bin)
+    install(TARGETS ${name} DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/$<CONFIGURATION>)
     
     # copy dlls to executable folder
     if (WIN32)
         add_custom_command(TARGET ${name} POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy_if_different
-            ${LSL_DLLS} ${CMAKE_CURRENT_BINARY_DIR}/bin)
+            ${LSL_DLLS} ${CMAKE_CURRENT_BINARY_DIR}/$<CONFIGURATION>)
      endif()
     
 endfunction()

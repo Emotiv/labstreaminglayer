@@ -59,6 +59,11 @@ There are some guidelines and examples on 3rd party applications:
 
 * Guidelines for <a href="examples/cpp/readme.md">C++</a> project.
 
+* Guidelines for <a href="examples/psychopy/readme.md">PsychoPy</a> project.
+
+* Guidelines for <a href="examples/python/readme.md">Python</a> project.
+
+
 
 ## Reference
 * [LSL on Github](https://github.com/sccn/labstreaminglayer)

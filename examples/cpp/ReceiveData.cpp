@@ -9,7 +9,7 @@
  * network and how to connect to it in order to receive data.
  */
 
-void printChunk(const std::vector<float>& chunk, std::size_t n_channels) {
+void printChunk(const std::vector<double>& chunk, std::size_t n_channels) {
     for(std::size_t i=0; i < chunk.size(); ++i) {
         std::cout << chunk[i] << ' ';
         if (i % n_channels == n_channels - 1)
@@ -17,7 +17,7 @@ void printChunk(const std::vector<float>& chunk, std::size_t n_channels) {
     }
 }
 
-void printChunk(const std::vector<std::vector<float>>& chunk) {
+void printChunk(const std::vector<std::vector<double>>& chunk) {
     for(const auto& vec: chunk)
         printChunk(vec, vec.size());
 }
@@ -64,8 +64,8 @@ int main(int argc, char* argv[]) {
         // start receiving & displaying the data
         std::cout << "Now pulling samples..." << std::endl;
 
-        std::vector<float> sample;
-        std::vector<std::vector<float>> chunk_nested_vector;
+        std::vector<double> sample;
+        std::vector<std::vector<double>> chunk_nested_vector;
         for (int i = 0; i < max_samples; ++i) {
             // pull a single sample
             if (transmitType == "sample") {
