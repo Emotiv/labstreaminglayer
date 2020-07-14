@@ -23,7 +23,7 @@ The following guide describes how Psychopy send marker to EMOTIV LSL Interface.
 The example will create a LSL Outlet stream have 3 channels. Each event is array containing MarkerTime, MarkerValue, CurrentTime. The markertime of marker will be loaded from sending_marker.csv randomly.
 A marker is sent to LSL every 1000ms.
 In the example, a marker value is a random number from 1-99.
-```
+```python
 # Set up LabStreamingLayer stream.
 info = StreamInfo(name='PsychoPyMarker', type='Markers', channel_count=3,
                   channel_format='double64', source_id='unique012345')
