@@ -24,6 +24,8 @@ Configure for data streams (EEG, Motions, Performance Metrics) as LSL Outlet.
 
 * **Transmit type:** We support both *Sample* and *Chunk*. A chunk contains certain number of samples, depending on the *Chunk size*.
 
+**Notes**: If you choose type *cf_float32*, the timestamp might not be correct as expected because the timestamp value is out of range(-16777216 to 16777216) which mentioned in [LSL doc](https://labstreaminglayer.readthedocs.io/projects/liblsl/ref/enums.html).
+
 ### Inlet
 To support sending data from a LSL Outlet to Emotiv data streams. 
 
