@@ -32,14 +32,13 @@ Click the **Start** button to start streaming.
 <p align="center">
   <img src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/unity-send-marker.png">
 </p>
+
 3. Go to **Lab Streaming Layer** page, **Inlet** tab on EmotivPRO, choose **Unity_LSL** in stream name. Then click the **Connect** button.
 
 4. Markers will be added to data stream as the vertical red lines:
 <p align="center">
   <img src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/marker-added.png">
 </p>
-
-5. Click **Stop** button to stop sending markers.
 
 ## Reference
 

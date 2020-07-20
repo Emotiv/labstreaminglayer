@@ -65,6 +65,8 @@ There are some guidelines and examples on 3rd party applications:
 
 * Guidelines for <a href="examples/python/readme.md">Python</a> project.
 
+* Guidelines for <a href="examples/unity/readme.md">Unity</a> project.
+
 
 
 ## Reference
