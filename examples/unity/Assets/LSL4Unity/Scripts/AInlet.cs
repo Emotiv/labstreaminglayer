@@ -172,7 +172,10 @@ namespace Assets.LSL4Unity.Scripts.AbstractInlets
         public liblsl.StreamInfo[] QueryAvailStreams() 
         {
             var listStreams = resolver.results();
-            return listStreams;
+            if (listStreams != null)
+                return listStreams;
+            else
+                return new liblsl.StreamInfo[]{};
         }
 
         /// <summary>
@@ -182,7 +185,7 @@ namespace Assets.LSL4Unity.Scripts.AbstractInlets
             
             if (inlet != null)
             {
-                Debug.Log("An inlet created for stream: " + inlet.info().name()); 
+                Debug.Log("An inlet already was created for stream: " + inlet.info().name()); 
                 return false;
             }
 
@@ -193,7 +196,7 @@ namespace Assets.LSL4Unity.Scripts.AbstractInlets
             }
             else
             {
-                Debug.Log(" Can not create an inlet for stream: " + streamInfo.name()); 
+                Debug.Log("Can not create an inlet for stream: " + streamInfo.name()); 
                 return false;
             }
         }

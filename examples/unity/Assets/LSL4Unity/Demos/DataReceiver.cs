@@ -106,7 +106,7 @@ public class DataReceiver :ADoubleInlet {
     /// Connect to a LSL streams
     /// </summary>
     public void OnConnectClick() {
-        if (listStreams.Count < 0) {
+        if (listStreams.Count == 0) {
             Debug.LogWarning(" No stream available.");
             return;
         }
@@ -122,6 +122,9 @@ public class DataReceiver :ADoubleInlet {
                 DeviceID.text    = info.source_id();
                 NumChans.text    = info.channel_count().ToString();
                 DataHeaderTxt.text = string.Join("; ", GetChannelsList().ToArray());
+
+                // disable dropdown
+                DropdownStreams.enabled = false;
             }
             // TODO:  disable connect button
 
@@ -137,10 +140,11 @@ public class DataReceiver :ADoubleInlet {
     {
         if (_inletCreated) {
             CloseInlet();
-            _inletCreated       = false;
-            DataHeaderTxt.text  = "";
-            DataStreamTxt.text  = "";
-            _currStreamName      = "";
+            _inletCreated           = false;
+            DataHeaderTxt.text      = "";
+            DataStreamTxt.text      = "";
+            _currStreamName         = "";
+            DropdownStreams.enabled = true;
 
         }
     }
