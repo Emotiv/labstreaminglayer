@@ -2,6 +2,7 @@ using UnityEngine;
 using LSL;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 // Don't forget the Namespace import
 using Assets.LSL4Unity.Scripts.AbstractInlets;
@@ -125,8 +126,14 @@ public class DataReceiver :ADoubleInlet {
 
                 // disable dropdown
                 DropdownStreams.enabled = false;
+                // disable button
+                //gameObject.GetComponent<Button>().interactable = false;
+                Button button = GameObject.Find("Canvas/btnConnect").GetComponent<Button>();
+                if ( button != null) {
+                    button.interactable = false;
+                }
+
             }
-            // TODO:  disable connect button
 
         }
         else
@@ -145,7 +152,10 @@ public class DataReceiver :ADoubleInlet {
             DataStreamTxt.text      = "";
             _currStreamName         = "";
             DropdownStreams.enabled = true;
-
+            Button button = GameObject.Find("Canvas/btnConnect").GetComponent<Button>();
+            if ( button != null) {
+                button.interactable = true;
+            }
         }
     }
 
