@@ -77,6 +77,3 @@ There are some guidelines and examples on 3rd party applications:
 ## Release Notes
 
 See <a href="docs/ReleaseNotes.md">here</a>.
-
-
-
