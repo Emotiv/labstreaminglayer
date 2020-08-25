@@ -1,0 +1,3 @@
+[submodule "examples/matlab/liblsl-Matlab"]
+	path = examples/matlab/liblsl-Matlab
+	url = https://github.com/labstreaminglayer/liblsl-Matlab.git
