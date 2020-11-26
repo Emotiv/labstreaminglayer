@@ -1,28 +1,33 @@
-
 % add library path to search path
 mfilepath=fileparts(which(mfilename));
 %disp(mfilepath);
 addpath(fullfile(mfilepath,'./liblsl-Matlab'));
+
+lib_path = "";
 % todo: check the below lines code called many times
 if ismac
     % Code to run on Mac platform
-    addpath(fullfile(mfilepath,'./bin/mac'));
-    addpath(fullfile(mfilepath,'./liblsl-Matlab'));
+    lib_path = fullfile(mfilepath,'./bin/mac');
+
 elseif isunix
     % Code to run on Linux platform
-    addpath(fullfile(mfilepath,'./bin/linux'));
+    disp('Unsupported linux yet.')
 elseif ispc
     % Code to run on Windows platform
-    addpath(fullfile(mfilepath,'./bin/win64'));
+    lib_path = fullfile(mfilepath,'./bin/win64');
 else
-    disp('Platform not supported');
+    disp('Platform not supported')
 end
+
 %% instantiate the library
+disp('Loading library...');
 try
     lib = lsl_loadlib(env_translatepath('dependencies:/liblsl-Matlab/bin'));
 catch
-    lib = lsl_loadlib();
+    fprintf('Load libarry from path %s \n',lib_path);
+    lib = lsl_loadlib(lib_path);
 end
+
 
 % resolve a stream...
 disp('Resolving an EEG stream...');

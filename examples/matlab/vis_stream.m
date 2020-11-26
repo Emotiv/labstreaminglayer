@@ -67,28 +67,35 @@ function vis_stream(varargin)
 mfilepath=fileparts(which(mfilename));
 addpath(fullfile(mfilepath,'./liblsl-Matlab'));
 %disp(mfilepath);
+lib_path = "";
 % todo: check the below lines code called many times
 if ismac
     % Code to run on Mac platform
-    addpath(fullfile(mfilepath,'./bin/mac'));
+    lib_path = fullfile(mfilepath,'./bin/mac');
+
 elseif isunix
     % Code to run on Linux platform
-    addpath(fullfile(mfilepath,'./bin/linux'));
+    disp('Unsupported linux yet.')
 elseif ispc
     % Code to run on Windows platform
-    addpath(fullfile(mfilepath,'./bin/win64'));
+    lib_path = fullfile(mfilepath,'./bin/win64');
 else
-    disp('Platform not supported');
+    disp('Platform not supported')
 end
+
 
 % make sure that dependencies are on the path and that LSL is loaded
 if ~exist('arg_define','file')
     addpath(genpath(fileparts(mfilename('fullpath'))));
 end
+
+%% instantiate the library
+%disp('Loading library...');
 try
     lib = lsl_loadlib(env_translatepath('dependencies:/liblsl-Matlab/bin'));
 catch
-    lib = lsl_loadlib();
+    %fprintf('Load libarry from path %s \n',lib_path);
+    lib = lsl_loadlib(lib_path);
 end
 
 % handle input arguments
