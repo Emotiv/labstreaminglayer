@@ -18,7 +18,7 @@ The following guide describes how Psychopy send marker to EMOTIV LSL Interface.
 
 2. Hit **Run** button then connect to 'PsychoPySimpleMarker' stream on EmotivPro Inlet setting as below:
 <p align="center">
-  <img src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/psychopy_builder_inlet_config.png">
+  <img src="https://github.com/Emotiv/labstreaminglayer/blob/master/docs/images/psychopy_builder_inlet_config.png">
 </p>
 
 The example will create a simple marker event stream. The value of marker will be loaded from marker_data.csv randomly. A marker event will be sent every 1000ms.
@@ -29,7 +29,7 @@ The example will create a simple marker event stream. The value of marker will b
 
 2. Hit **Run** button then connect to 'PsychoPyMarker' stream on EmotivPro Inlet setting. The result will be shown as below:
 <p align="center">
-  <img src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/sendmarker_PsychoPyCoder.png">
+  <img src="https://github.com/Emotiv/labstreaminglayer/blob/master/docs/images/sendmarker_PsychoPyCoder.png">
 </p>
 
 The example will create a LSL Outlet stream have 3 channels. Each event is array containing MarkerTime, MarkerValue, CurrentTime. A marker is sent to LSL every 1500ms.

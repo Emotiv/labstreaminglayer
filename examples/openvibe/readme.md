@@ -15,24 +15,24 @@ Click **Start** button to start streaming.
 2. Open the OpenViBE Acquisition Server, select **LabStreamingLayer (LSL)** option in the **Driver** field. Click the **Driver Properties** button. In the **Device Configuration**, make sure **EmotivDataStream-xx/xx** is selected in the **Signal stream** field.
 The **EmotivDataStream-EEG** stream is for EEG data, the **EmotivDataStream-Motion** stream is for motion data, etc.
 <p align="center">
-  <img width="779" height="711" src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/openvibe-config.png">
+  <img width="779" height="711" src="https://github.com/Emotiv/labstreaminglayer/blob/master/docs/images/openvibe-config.png">
 </p>
 
 3. Connect to the LSL stream and then hit **Play** to start receiving data:
 <p align="center">
-  <img src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/openvibe-play-receivedata.png">
+  <img src="https://github.com/Emotiv/labstreaminglayer/blob/master/docs/images/openvibe-play-receivedata.png">
 </p>
 
 4. Open the OpenViBE designer, then open the file [LSLViewer.mxs](./LSLViewer.mxs). You can see the program connect an "Acquisition client" block to a "Signal display".
 Click on the "Acquisition client" block to change the settings, and make sure the **Acquisition server port** is matching with the connection port on the Acquisition server.
 Hit **Apply** to save and close the dialog.
 <p align="center">
-  <img src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/openvibe-config-designer.png">
+  <img src="https://github.com/Emotiv/labstreaminglayer/blob/master/docs/images/openvibe-config-designer.png">
 </p>
 
 5. New hit **Play** button to display data streams:
 <p align="center">
-  <img src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/openvibe-data-graph.png">
+  <img src="https://github.com/Emotiv/labstreaminglayer/blob/master/docs/images/openvibe-data-graph.png">
 </p>
 
 

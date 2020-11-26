@@ -64,7 +64,7 @@ The last parameter is the number of sample to be printed out in console.
 
 3. If succeeded you can see the result like this:
 <p align="center">
-  <img src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/cpp-receivedata-result.png">
+  <img src="https://github.com/Emotiv/labstreaminglayer/blob/master/docs/images/cpp-receivedata-result.png">
 </p>
 
 ## How to send marker from C++ to EMOTIV LSL Inlet
@@ -77,7 +77,7 @@ EMOTIV LSL Inlet supports add both simple marker and marker with desire event ti
 
 3. If succeeded you can see the result like this:
 <p align="center">
-  <img src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/cpp-sendmarker.png">
+  <img src="https://github.com/Emotiv/labstreaminglayer/blob/master/docs/images/cpp-sendmarker.png">
 </p>
 
 ## Reference

@@ -23,12 +23,12 @@ Click the **Start** button to start streaming.
 
 3. Run vis_stream.m. In the pop-up dialog, change the sampling rate for display to match the rate of data from the Outlet:
 <p align="center">
-  <img src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/matlab-vistream-config.png">
+  <img src="https://github.com/Emotiv/labstreaminglayer/blob/master/docs/images/matlab-vistream-config.png">
 </p>
 
 4. Hit **Ok**. The data stream will be displayed like this:
 <p align="center">
-  <img src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/matlab-vistream-result.png">
+  <img src="https://github.com/Emotiv/labstreaminglayer/blob/master/docs/images/matlab-vistream-result.png">
 </p>
 
 **Note**: You also can retrieve data via RecieveData.m example.
@@ -44,12 +44,12 @@ Click the **Start** button to start streaming.
 
 3. Go to **Lab Streaming Layer** page, **Inlet** tab on EmotivPRO, choose **MatlabMarker** in stream name. Then click the **Connect** button.
 <p align="center">
-  <img src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/matlab-inlet-config.png">
+  <img src="https://github.com/Emotiv/labstreaminglayer/blob/master/docs/images/matlab-inlet-config.png">
 </p>
 
 4. Markers will be added to data stream as the vertical red lines:
 <p align="center">
-  <img src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/marker-added.png">
+  <img src="https://github.com/Emotiv/labstreaminglayer/blob/master/docs/images/marker-added.png">
 </p>
 
 ## Reference

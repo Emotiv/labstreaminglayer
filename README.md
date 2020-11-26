@@ -13,7 +13,7 @@ After connecting your EMOTIV Brainwear&reg; headset, go to LSL settings menu in 
 ### Outlet
 Configure for data streams (EEG, Motions, Performance Metrics) as LSL Outlet.
 <p align="center">
-  <img src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/config-outlet.png">
+  <img src="https://github.com/Emotiv/labstreaminglayer/blob/master/docs/images/config-outlet.png">
 </p>
 
 * **Stream name:** Show the name of LSL stream. The actual stream name on the other side (Inlet) will be *EmotivDataStream-EEG*, *EmotivDataStream-Motion* or *EmotivDataStream-Performance-Metrics*, depending on the type of data stream.
@@ -30,7 +30,7 @@ Configure for data streams (EEG, Motions, Performance Metrics) as LSL Outlet.
 To support sending data from a LSL Outlet to Emotiv data streams. 
 
 <p align="center">
-  <img src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/config-inlet.png">
+  <img src="https://github.com/Emotiv/labstreaminglayer/blob/master/docs/images/config-inlet.png">
 </p>
 
 Currently we support sending markers to the Inlet with 2 options:
@@ -47,7 +47,7 @@ Currently we support sending markers to the Inlet with 2 options:
 
 After sending marker via LSL, You can see the stream name in the Inlet page. Choose one then click the Connect button. After that, you will see the marker being added to the data stream as below:
 <p align="center">
-  <img src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/marker-added.png">
+  <img src="https://github.com/Emotiv/labstreaminglayer/blob/master/docs/images/marker-added.png">
 </p>
 
 
