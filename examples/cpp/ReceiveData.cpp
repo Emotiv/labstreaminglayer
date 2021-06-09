@@ -78,7 +78,7 @@ int main(int argc, char* argv[]) {
                 // pull a chunk into a nested vector - easier, but slower
                 inlet.pull_chunk(chunk_nested_vector);
                 printChunk(chunk_nested_vector);
-                std::this_thread::sleep_for(std::chrono::milliseconds(10));
+                std::this_thread::sleep_for(std::chrono::milliseconds(1000));
             }
             else {
                 std::cout << "Not support transmit type: " << transmitType << std::endl;
