@@ -3,8 +3,6 @@
 The following guide describes how Unity works with EMOTIV LSL Interface.
 
 ## Prerequisites
-* [Download and install](https://www.emotiv.com/developer/) the EMOTIV App and EmotivPRO
-* Get a EmotivPRO license from https://www.emotiv.com/emotivpro/
 * Install Unity (recommend version 2018.4.22f1 or later)
 
 ## How to receive data from EMOTIV LSL Outlet stream in Unity

@@ -68,16 +68,20 @@ int main(int argc, char* argv[]) {
         std::vector<std::vector<double>> chunk_nested_vector;
         for (int i = 0; i < max_samples; ++i) {
             // pull a single sample
+            double time;
             if (transmitType == "sample") {
-                inlet.pull_sample(sample);
-                printChunk(sample, inlet.get_channel_count());
+                time = inlet.pull_sample(sample);
+                if (time > 0)
+                    printChunk(sample, inlet.get_channel_count());
                 // Sleep so the outlet will have time to push some samples
                 std::this_thread::sleep_for(std::chrono::milliseconds(10));
             }
             else if (transmitType == "chunk") {
                 // pull a chunk into a nested vector - easier, but slower
-                inlet.pull_chunk(chunk_nested_vector);
-                printChunk(chunk_nested_vector);
+                time = inlet.pull_chunk(chunk_nested_vector);
+                if (time > 0)
+                    printChunk(chunk_nested_vector);
+
                 std::this_thread::sleep_for(std::chrono::milliseconds(1000));
             }
             else {

@@ -3,8 +3,6 @@
 The following guide describes how MATLAB works with EMOTIV LSL Interface.
 
 ## Prerequisites
-* [Download and install](https://www.emotiv.com/developer/) the EMOTIV App and EmotivPRO
-* Get a EmotivPRO license from https://www.emotiv.com/emotivpro/
 * Install MATLAB (recommend version 2017a or later)
 * Get MATLAB LSL library from https://github.com/labstreaminglayer/liblsl-Matlab.git. Currently, we are using version at commit "62761b0". You also can get the library via submodule command as below
 ```

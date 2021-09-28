@@ -4,7 +4,7 @@ Here are guidelines and some examples to use LSL with EMOTIV Brainwear&reg;.
 
 ## Prerequisites
 
-* [Download and install](https://www.emotiv.com/developer/) the EMOTIV App and EmotivPRO.
+* [Download and install](https://www.emotiv.com/developer/) the EMOTIV Launcher and EmotivPRO.
 * Get a EmotivPRO license from https://www.emotiv.com/emotivpro/
 
 ## How to work with LSL Outlet
@@ -26,13 +26,13 @@ After connecting your EMOTIV Brainwear&reg; headset on EmotivPro, go to Settings
 ### Data Output format
 The data output format as below table:
 
-Stream type | Data output format | Sample rate | Channels details
+Stream type | Data output format | Sample rate | Notes
 ----------- | ------------------ | ------------ | ---------------
-EEG | {"Timestamp", "Counter", "Interpolate", <EEG sensors>, "HardwareMarker" } | 128Hz/ 256 Hz | [EEG Channel details ](https://emotiv.gitbook.io/cortex-api/data-subscription/data-sample-object#eeg)
-Motion | {"Timestamp", "Counter", "Interpolate", "Q0","Q1","Q2","Q3", "ACCX","ACCY","ACCZ", "MAGX","MAGY","MAGZ"} |32 Hz / 64 Hz / 128 Hz | [Motion Channel details ](https://emotiv.gitbook.io/cortex-api/data-subscription/data-sample-object#motion)
-Performance-Metrics | {"Timestamp", "Engagement","Excitement","Focus","Interest ", "Relaxation","Stress"} | 2 Hz for high resolution / 0.1 Hz for low resolution | [Performance Channel details ](https://emotiv.gitbook.io/cortex-api/data-subscription/data-sample-object#performance-metric)
-Contact-Quality | {"Timestamp", "BatteryPercent", "Overall", "Signal", <EEG sensors> } | 2 Hz | [CQ Channel details ](https://emotiv.gitbook.io/cortex-api/data-subscription/data-sample-object#device-information)
-EEG-Quality | {"Timestamp","BatteryPercent","Overall","SampleRateQuality", <EEG sensors>} | 2 Hz | [EQ Channel details ](https://emotiv.gitbook.io/cortex-api/data-subscription/data-sample-object#eeg-quality)
+EEG | {"Timestamp", "Counter", "Interpolate", <EEG sensors>, "HardwareMarker", "Markers" } | 128Hz/ 256 Hz | Description of  EEG channels at [link](https://emotiv.gitbook.io/cortex-api/data-subscription/data-sample-object#eeg). The Markers channel  is supported from V3.0 and it is marker value of marker object included on EEG data.
+Motion | {"Timestamp", "Counter", "Interpolate", "Q0","Q1","Q2","Q3", "ACCX","ACCY","ACCZ", "MAGX","MAGY","MAGZ"} |32 Hz / 64 Hz / 128 Hz | Description of Motion channels at [link](https://emotiv.gitbook.io/cortex-api/data-subscription/data-sample-object#motion)
+Performance-Metrics | {"Timestamp", "Engagement","Excitement","Focus","Interest ", "Relaxation","Stress"} | 2 Hz for high resolution / 0.1 Hz for low resolution | Description of Performance metric at [link](https://emotiv.gitbook.io/cortex-api/data-subscription/data-sample-object#performance-metric)
+Contact-Quality | {"Timestamp", "BatteryPercent", "Overall", "Signal", <EEG sensors> } | 2 Hz | Description of Contact Quality at [link](https://emotiv.gitbook.io/cortex-api/data-subscription/data-sample-object#device-information) but the order of channels changes a bit.
+EEG-Quality | {"Timestamp","BatteryPercent","Overall","SampleRateQuality", <EEG sensors>} | 2 Hz | Description of EEG Quality at [link](https://emotiv.gitbook.io/cortex-api/data-subscription/data-sample-object#eeg-quality)
 
 
 ## How to work with LSL Inlet

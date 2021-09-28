@@ -3,8 +3,6 @@
 The following guide describes how OpenViBE works with EMOTIV LSL Interface.
 
 ## Prerequisites
-* [Download and install](https://www.emotiv.com/developer/) the EMOTIV App and EmotivPRO
-* Get a EmotivPRO license from https://www.emotiv.com/emotivpro/
 * Get and install OpenViBE from http://openvibe.inria.fr (latest version 2.2.0)
 
 ## How to receive data from EMOTIV LSL Outlet stream in OpenViBE

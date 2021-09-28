@@ -14,7 +14,7 @@ while True:
     # get a new sample (you can also omit the timestamp part if you're not
     # interested in it)
     sample, timestamp = inlet.pull_sample()
-    time.sleep(0.5)
-    print(timestamp, sample)
+    if timestamp != None:
+        print(timestamp, sample)
 
 

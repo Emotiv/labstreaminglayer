@@ -3,8 +3,6 @@
 The following guide describes how Psychopy send marker to EMOTIV LSL Interface.
 
 ## Prerequisites
-* [Download and install](https://www.emotiv.com/developer/) the EMOTIV App and EmotivPRO
-* Get a EmotivPRO license from https://www.emotiv.com/emotivpro/
 * Get and install PsychoPy from https://www.psychopy.org/ (latest version 2020.1.3)
 * Install python3 (version 3.6.8 recommended)
 * Install pylsl (the Python interface of LSL) 
