@@ -3,8 +3,6 @@
 The following guide describes how C++ works with EMOTIV LSL Interface.
 
 ## Prerequisites
-* [Download and install](https://www.emotiv.com/developer/) the EMOTIV Launcher and EmotivPRO
-* Get a EmotivPRO license from https://www.emotiv.com/emotivpro/
 * Require C++ compiler (gcc, MinGW, etc)
 * Install CMake version 3.5 or later
 
