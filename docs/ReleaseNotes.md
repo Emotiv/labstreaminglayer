@@ -1,5 +1,8 @@
 # Release Notes
 
+## 17th April, 2022
+- Support Band Power for EmotivPRO LSL Outlet
+
 ## 28th September, 2021
 - Update Markers channels to EEG LSL outlet data stream.
 - Update name EMOTIV App to EMOTIV Launcher
