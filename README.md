@@ -15,9 +15,9 @@ After connecting your EMOTIV Brainwear&reg; headset on EmotivPro, go to Settings
   <img src="https://github.com/Emotiv/labstreaminglayer/blob/emotiv-lsl/docs/images/config-outlet.png">
 </p>
 
-* **Stream name:** Set the stream name for transmission. The stream name consists of the prefix "EmotivDataStream-"  combined with data types such as: *EEG*, *Motion*, *Performance-Metrics*, *Contact-Quality* or *EEG-Quality*.
+* **Stream name:** Set the stream name for transmission. The stream name consists of the prefix "EmotivDataStream-"  combined with data types such as: *EEG*, *Motion*, *Performance-Metrics*, *Contact-Quality*, *EEG-Quality* or *Band-Power*
 
-* **Data stream:** Choose the data stream for transmission and select between supported EEG, Motion, Performance Metrics, Contact Quality, EEG Quality Data. Each one will create an individual LSL stream.
+* **Data stream:** Choose the data stream for transmission and select between supported EEG, Motion, Performance Metrics, Contact Quality, EEG Quality, Band Power Data. An individual LSL stream will be created for each one.
 
 * **Data format:** Currently, 2 types are supported: *cf_float32* or *cf_double64*. But if you choose type *cf_float32*, the timestamp might not be correct as expected because the timestamp value is out of range(-16777216 to 16777216) which mentioned in [LSL doc](https://labstreaminglayer.readthedocs.io/projects/liblsl/ref/enums.html).
 
@@ -33,6 +33,7 @@ Motion | {"Timestamp", "Counter", "Interpolate", "Q0","Q1","Q2","Q3", "ACCX","AC
 Performance-Metrics | {"Timestamp", "Engagement","Excitement","Focus","Interest ", "Relaxation","Stress"} | 2 Hz for high resolution / 0.1 Hz for low resolution | Description of Performance metric at [link](https://emotiv.gitbook.io/cortex-api/data-subscription/data-sample-object#performance-metric)
 Contact-Quality | {"Timestamp", "BatteryPercent", "Overall", "Signal", <EEG sensors> } | 2 Hz | Description of Contact Quality at [link](https://emotiv.gitbook.io/cortex-api/data-subscription/data-sample-object#device-information) but the order of channels changes a bit.
 EEG-Quality | {"Timestamp","BatteryPercent","Overall","SampleRateQuality", <EEG sensors>} | 2 Hz | Description of EEG Quality at [link](https://emotiv.gitbook.io/cortex-api/data-subscription/data-sample-object#eeg-quality)
+Band-Power | {"Timestamp",<EEG sensors/Band>} | 8 Hz | Description of Band Power at [link](https://emotiv.gitbook.io/cortex-api/data-subscription/data-sample-object#band-power)
 
 
 ## How to work with LSL Inlet
@@ -53,10 +54,10 @@ After sending marker via LSL, You can see the stream name in the Inlet page. Cho
 
 Currently we only support sending markers to the Inlet with 2 options:
 
-1. A simple marker value - Double / integer type is expected but EmotivPRO will extract only the integer part before adding into data stream.
+1. **A simple marker value** - Double / integer type is expected but EmotivPRO will extract only the integer part before adding into data stream.
   * Expected format of data: `{"MarkerValue"}`
 
-2. Marker with time for timing synchronization - The marker event is a vector with 3 elements:
+2. **Marker with time for timing synchronization** - The marker event is a vector with 3 elements:
   * `MarkerTime` is the epoch time of the event in double type.
   * `MarkerValue` is value of marker. Double / integer type is expected but EmotivPRO will extract only the integer part before adding into data stream.
   * `CurrentTime` is current epoch time (double type) when the marker is being pushed to the Inlet. It is usually later than the `MarkerTime`.
