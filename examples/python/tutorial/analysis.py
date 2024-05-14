@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Path to your XDF file
-data_path = '/Users/lucas/Desktop/Emotiv/LSL/sub-P001/ses-S001/eeg/sub-P001_ses-S001_task-Default_run-001_eeg.xdf'
+data_path = '/path/to/your/xdf_file.xdf'
 
 # Load the XDF file
 streams, fileheader = pyxdf.load_xdf(data_path)
