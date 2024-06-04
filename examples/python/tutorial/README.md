@@ -1,5 +1,5 @@
 # Emotiv LSL tutorial
-This sub-repository contains the materials that support the Emotiv LSL tutorial, which can be found on our website (LINK)
+This sub-repository contains the materials that support the Emotiv LSL tutorial, which can be found on our website (https://www.emotiv.com/blogs/tutorials/emotiv-lab-streaming-layer-lsl)
 
 ## Prerequisites
 1. Basic working knowledge of Python coding
