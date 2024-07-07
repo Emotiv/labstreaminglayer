@@ -1,8 +1,10 @@
-"""LSL example - playing audio and sending a trigger
+"""
+LSL example - playing audio and sending a trigger
 This script shows minmimal example code that will allow a user to play and audio file and simultaneously send a a trigger through an LSL stream that can be captured (for instance, using LabRecorder software) and synchronized with other LSL data streams.
 
 Operation:
-Once run in the Terminal, this script immediately initates an LSL stream. Whenever the 'Enter' key is pressed, it sends a trigger and plays an audio file."""
+Once run in the Terminal, this script immediately initates an LSL stream. Whenever the 'Enter' key is pressed, it sends a trigger and plays an audio file.
+"""
 
 import sounddevice as sd
 import soundfile as sf
