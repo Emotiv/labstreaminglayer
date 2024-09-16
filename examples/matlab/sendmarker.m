@@ -28,11 +28,9 @@ end
 
 % make a new stream outlet
 disp('Creating a new streaminfo...');
-%info = lsl_streaminfo(lib,'BioSemi','Markers',2,100,'cf_float32','matlab123');
-
-info = lsl_streaminfo(lib,'MatlabMarker','Markers', 3, 100,'cf_double64','matlab1234');
+info = lsl_streaminfo(lib,'MatlabMarker','Markers', 1, 100,'cf_double64','matlab1234');
 chns = info.desc().append_child('channels');
-for label = {'MarkerTime', 'MarkerValue','CurrentTime'}
+for label = {'MarkerValue'}
     ch = chns.append_child('channel');
     ch.append_child_value('label',label{1});
     ch.append_child_value('unit','interge');
@@ -51,7 +49,7 @@ while true
     epocTimeNow = posixtime(t); % convert to epoch time
     %sprintf('%16.4f',epocTimeNow);
     markerValue = randi(100);
-    data = [epocTimeNow, markerValue, epocTimeNow];
+    data = [markerValue];
     %disp(data);
     disp('Send marker has value: ');
     disp(markerValue);

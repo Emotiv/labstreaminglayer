@@ -12,13 +12,13 @@ import datetime
 def main():
 
     # Set up LabStreamingLayer stream.
-    info = StreamInfo(name='PsychoPyMarker', type='Markers', channel_count=3,
+    info = StreamInfo(name='PsychoPyMarker', type='Markers', channel_count=1,
                       channel_format='double64', source_id='unique012345')
     chns = info.desc().append_child("channels")
     #MarkerTime is the time you want to add a marker. It is an epoch time.
     #MarkerValue is value of marker
     #CurrentTime is current time at epoch time
-    for label in ["MarkerTime", "MarkerValue", "CurrentTime"]:
+    for label in ["MarkerValue"]:
         ch = chns.append_child("channel")
         ch.append_child_value("label", label)
         ch.append_child_value("type", "Marker")
@@ -39,9 +39,7 @@ def main():
 
         now = datetime.datetime.now().timestamp()
         print(now)
-        # data: MarkerTime, MarkerValue, Current EpochTime
-        data = [now, markerValue, now]
-        
+        data = [markerValue]
         outlet.push_sample(data)
         
         if 'escape' in event.getKeys():  # Exit if user presses escape.
