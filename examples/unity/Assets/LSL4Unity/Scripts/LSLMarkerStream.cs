@@ -15,7 +15,7 @@ namespace Assets.LSL4Unity.Scripts
 
         private liblsl.StreamInfo lslStreamInfo;
         private liblsl.StreamOutlet lslOutlet;
-        public int lslChannelCount = 3;
+        public int lslChannelCount = 1;
 
         //Assuming that markers are never send in regular intervalls
         private double nominal_srate = liblsl.IRREGULAR_RATE;
@@ -39,7 +39,7 @@ namespace Assets.LSL4Unity.Scripts
                                         unique_source_id);
             lslStreamInfo.desc().append_child_value("manufacturer", "UnityLSL");
             liblsl.XMLElement chns = lslStreamInfo.desc().append_child("channels");
-            string[] channels = {"MarkerTime", "MarkerValue", "CurrentTime"};
+            string[] channels = {"MarkerValue"};
             foreach(string chanName in channels) {
                 chns.append_child("channel").append_child_value("label", chanName).append_child_value("type", "Marker");
             }
@@ -53,11 +53,7 @@ namespace Assets.LSL4Unity.Scripts
         /// </summary>
         public void Write(int value, long epochNow)
         {
-            
-            sample[0] = epochNow;
-            sample[1] = value;
-            sample[2] = epochNow;
-            //  time stamp
+            sample[0] = value;
             lslOutlet.push_sample(sample);
         }
 
