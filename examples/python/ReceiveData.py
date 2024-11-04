@@ -46,6 +46,6 @@ print("Now pulling samples...")
 
 while True:
     sample, timestamp = inlet.pull_sample()
-    time.sleep(0.5)
-    print(sample)
+    if timestamp != None:
+        print(sample)
 
