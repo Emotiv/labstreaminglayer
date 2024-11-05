@@ -34,7 +34,7 @@ else:
 inlet = StreamInlet(selected_stream)
 info = inlet.info()
 print(f"\nThe manufacturer is: {info.desc().child_value('manufacturer')}")
-print("The channel labels are as follows:")
+print("The channel labels are listed below:")
 ch = info.desc().child("channels").child("channel")
 labels = []
 for _ in range(info.channel_count()):
