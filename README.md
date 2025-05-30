@@ -1,5 +1,6 @@
-# Emotiv Lab Streaming Layer Interface
-## Elevate Your Neurotech Research with EmotivPRO's LSL Integration
+# EmotivPRO's Lab Streaming Layer (LSL) Feature
+
+## Overview
 
 **Lab Streaming Layer (LSL)** is a robust protocol designed for the efficient and precise synchronized collection of time series measurements across diverse machines and applications.
 
